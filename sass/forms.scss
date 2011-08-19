@@ -1,0 +1,286 @@
+/* This CSS was written using SASS and Compass.
+ * @see http://compass-style.org/ 
+ -----------------------------------------------------------------------------*/
+
+@import "compass/utilities";
+@import "compass/css3";
+
+$sans: "Droid Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
+$serif: "Droid Serif", Georgia, Verdana, Arial, sans-serif;
+$lucida: "Lucida Grande", Tahoma, Verdana, sans-serif;
+$lucida_unicode: "Lucida Sans Unicode", "Lucida Grande", Tahoma, Verdana, sans-serif;
+$yellow: #fc0;
+$blue: #39c;
+
+
+/* HTML5 Boilerplate goodies.
+ * @see https://github.com/paulirish/html5-boilerplate/blob/master/css/style.css#L132
+ -----------------------------------------------------------------------------*/
+
+form {
+  clear: both;
+  font-family: $sans;
+  margin: 0;
+}
+fieldset {
+  border: solid 1px #ddd;
+  padding: 1em;
+  margin: 0 0 1em 0;
+}
+label {
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 2;
+  &.option {
+    font-weight: normal;
+    display: inline;
+  }
+}
+legend {
+  border: 0;
+  font-weight: bold;
+  *margin-left: -7px;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: $lucida;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
+table button,
+table input {
+  *overflow: auto;
+  .form-item {
+    margin: 0;
+  }
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  @include box-sizing(content-box);
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+input:invalid,
+textarea:invalid {
+  background-color: #f0dddd;
+}
+
+
+/* Wrappers
+------------------------------------------------------------------------------*/
+
+.form-item {
+  margin: 0 0 20px 0;
+  .form-item {
+    margin: 0 0 4px 0;
+  }
+}
+.form-actions {
+  padding-top: 1em;
+}
+.container-inline {
+  .form-item {
+    margin-right: 1em;
+  }
+}
+
+// Inputs.
+textarea,
+input:not([type="submit"]) {
+  border: solid 1px #ddd;
+  padding: 6px;
+  @include border-radius(4px);
+}
+textarea:focus,
+input:not([type="submit"]):focus {
+  background-color: #eee;
+}
+
+// Prevent the inline size attribute from causing the text input to extend
+// outside the content area in modern browsers.
+input[size="60"] {
+  max-width: 100%;
+  @include box-sizing(border-box);
+}
+select {
+  border: solid 1px #ddd;
+}
+
+// Resizable textareas.
+.resizable-textarea textarea {
+  @include border-radius(4px 4px 0 0);
+}
+.filter-wrapper {
+  padding-top: 0.5em;
+  .form-item {
+    margin: 0;
+  }
+  ul.tips {
+    padding: 0 0 0 20px;
+    li {
+      list-style: disc;
+    }
+    code {
+      font-size: 0.923em;
+    }
+  }
+}
+
+// Autocomplete.
+html.js input.form-autocomplete {
+  background-image: url(../images/throbber.gif);
+  background-position: 99% 6px;
+  &.throbbing {
+    background-position: 99% -17px;
+  }
+}
+
+// Buttons.
+button,
+input[type="submit"],
+.form-actions > a,
+.form-actions > a:visited {
+  background-color: #444;
+  @include linear-gradient(color-stops(#222 40%, #444 70%));
+  border: solid 1px #444;
+  color: #fff;
+  line-height: 2;
+  height: 2em;
+  padding: 0 1em;
+  margin: 0 0.5em;
+  vertical-align: baseline;
+  @include border-radius(4px);
+  @include inline-block;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+// Asterisk denoting a required field.
+.form-required,
+.tabledrag-changed {
+  color: #d44510;
+  margin: 0.25em;
+}
+
+// Descriptions.
+.description,
+.fieldset-description {
+  color: #888;
+  font-family: $lucida_unicode;
+  font-style: italic;
+}
+.description {
+  font-size: 0.923em;
+  line-height: 1.4;
+  padding: 0.5em 0;
+}
+
+// Password checker.
+div.form-item div.password-suggestions {
+  background-color: #f8f8f8;
+  border-color: #eee;
+  color: #000;
+  font-size: 1em;
+  padding: 1em;
+}
+
+// Modifications for outer regions.
+.outer .form-item {
+  margin: 0;
+}
+
+// Two column form layout.
+.two-column {
+  .form-item {
+    padding-left: 160px;
+    position: relative;
+    .form-item {
+      padding-left: 0;
+      label {
+        position: relative;
+      }
+    }
+    label {
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.vertical-tabs {
+  // Need to reopen the original issue. The system.base.css version of
+  // this causes visible issues and needs work.
+  .element-invisible {
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    width: 1px; 
+    &.element-focusable:active,
+    &.element-focusable:focus {
+      position: static !important;
+      height: auto;
+      margin: auto;
+      overflow: visible;
+      width: auto;
+    }
+  }
+}
+
+/* Lil screens
+ -----------------------------------------------------------------------------*/
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  // Vertical Tabs
+  div.vertical-tabs {
+    margin: 1em 0;
+    ul.vertical-tabs-list {
+      border-top: none;
+      float: none;
+      @include pie-clearfix;
+      width: 100%;
+      clear: both;
+      margin: 0;
+      li {
+        border-width: 0 0 1px 0;
+      }
+    }
+  }
+}
+
+

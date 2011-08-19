@@ -1,0 +1,79 @@
+/* This CSS was written using SASS and Compass.
+ * @see http://compass-style.org/ 
+ -----------------------------------------------------------------------------*/
+
+@import "compass/utilities";
+
+.container {
+  @include pie-clearfix;  
+  > :first-child {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+.column {
+  float: left;
+  display: inline;
+  position: relative;
+}
+
+// Default dimensions.
+.column.main {
+  width: 100%;
+}
+.column-first {
+  width: 25%;
+  left: -75%; // LTR
+}
+.column-second {
+  float: right; // LTR
+  width: 25%;
+}
+
+// Adjustments for 2-col layout with first sidebar.
+.sidebar-first {
+  .column.main {
+    width: 75%;
+    left: 25%; // LTR
+  }
+}
+// Adjustments for 2-col layout with second sidebar.
+.sidebar-second {
+  .column.main {
+    width: 75%;
+  }
+}
+// Adjustments for 3-col layout.
+.two-sidebars {
+  .column.main {
+    width: 50%;
+    left: 25%;
+  }
+  .column-first {
+    left: -50%; // LTR
+  }
+}
+
+// Adjustments for mobile.
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .container > :first-child,
+  .column {
+    float: none;
+    left: auto;
+    right: auto;
+    margin: 0 auto;
+    min-width: 0;
+    width: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    @include pie-clearfix;  
+    > :first-child {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+/* Logos */
+.logomobile { background-position: 0 -936px; width: 271px; height: 105px; } 
+.logo { background-position: 0 -1141px; width: 296px; height: 114px; } 
+
+/* 24 x 24 */
+.warning-lrg { background-position: -396px -464px; width: 24px; height: 24px; } 
+.x-lrg { background-position: -396px -720px; width: 24px; height: 24px; } 
+.check-lrg { background-position: 0 0; width: 24px; height: 24px; } 
+
+/* 16 x 16 */
+.comment { background-position: 0 -124px; }
+.down { background-position: 0 -240px; }
+.druplicon { background-position: 0 -356px; }
+.home { background-position: 0 -472px; }
+.left { background-position: 0 -588px; }
+.link { background-position: 0 -704px; }
+.locked { background-position: 0 -820px; }
+.minus { background-position: 0 -1355px; }
+.page { background-position: 0 -1471px; }
+.plus { background-position: 0 -1587px; }
+.popout { background-position: 0 -1703px; }
+.printer { background-position: 0 -1819px; }
+.right { background-position: -396px 0; }
+.search { background-position: -396px -116px; }
+.up { background-position: -396px -232px; }
+.user { background-position: -396px -348px; }
+.x { background-position: -396px -844px; }

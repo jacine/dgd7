@@ -1,0 +1,108 @@
+/* This CSS was written using SASS and Compass.
+ * @see http://compass-style.org/ 
+ -----------------------------------------------------------------------------*/
+
+@import "compass/utilities";
+@import "compass/css3";
+
+$sans: "Droid Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
+$serif: "Droid Serif", Georgia, Verdana, Arial, sans-serif;
+$lucida: "Lucida Grande", Tahoma, Verdana, sans-serif;
+$lucida_unicode: "Lucida Sans Unicode", "Lucida Grande", Tahoma, Verdana, sans-serif;
+$yellow: #fc0;
+$blue: #39c;
+
+/* Shared
+ -----------------------------------------------------------------------------*/
+
+div.tabs {
+  background-color: #222;
+  padding: 0 2em; 
+}
+ul.tabs {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.tabs li {
+  color: #fff;
+  margin: 0 0.2em 0 0;
+  padding: 0;
+  @include inline-block;
+}
+.tabs a {
+  color: #fc0;
+  display: block;
+  &:focus {
+    outline: 0;
+  }
+}
+
+/* Primary
+ -----------------------------------------------------------------------------*/
+
+.primary {
+  font-size: 1.077em;
+  line-height: 4ex;
+  margin-top: 1em;
+  overflow-y: auto;
+  height: 4ex;
+  a {
+    padding: 0 1em;
+    @include single-transition(none);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: #fff;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      @include border-radius(6px 6px 0 0);
+    }
+  }
+}
+
+/* Secondary
+ -----------------------------------------------------------------------------*/
+
+ul.secondary {
+  background-color: #fff;
+  line-height: 3ex;
+  margin: 0 -2em;
+  padding: 1em 1em 0 1em;
+  position: relative;
+}
+.secondary a {
+  background-color: #f8f8f8;
+  border: solid 1px #eee;
+  color: #000;
+  font-size: 0.846em;
+  font-weight: bold;
+  padding: 0.2em 1em;
+  text-transform: uppercase;
+  @include border-radius(3px);
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: #eee;
+    border-color: #ddd;
+    text-decoration: none;
+  }
+}
+
+/* Lil screens
+ -----------------------------------------------------------------------------*/
+ 
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  div.tabs {
+    padding: 0 1em;
+  }
+  ul.primary {
+    font-size: 0.846em;
+  }
+  .primary a {
+    padding: 0 0.5em;
+  }
+}

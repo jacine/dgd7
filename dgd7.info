@@ -1,0 +1,65 @@
+name = DGD7 Theme
+description = A theme written for The Definitive Guide to Drupal 7 book website.
+core = 7.x
+
+
+; REGIONS (pg. 282-292)
+;-------------------------------------------------------------------------------
+; Default
+regions[page_top] = Page Top
+regions[header] = Header
+regions[highlight] = Highlight
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[footer] = Footer
+regions[page_bottom] = Page Bottom
+
+; Custom
+regions[banner_ad] = Banner Ad
+regions[navigation] = Navigation
+
+
+; STYLESHEETS (pg. 341-347)
+;-------------------------------------------------------------------------------
+; Stylesheets handling is totally broken in .info files, so I can't recommend
+; using it for most use cases:
+;
+; Files added here:
+; - Load on every page, whether they were supposed to in the first place or not.
+; - Are grouped in a separate <style> tag with aggregation turned off and
+;   preprocessed and aggregated together when turned on in a <link> tag, which
+;   means you get once step closer to the 31 stylesheet limit in IE.
+; - Do not support the full range of drupal_add_css() functionality. So, you
+;   cannot do any of the following really common tasks:
+;   - Fully remove a stylesheet by overriding it. The second an AJAX render
+;     request is made, not only will the files you removed load, but they will
+;     added at the bottom of the stack and which can royally break your design.
+;   - Add conditional stylesheet for IE.
+;   - Add an external stylesheet, such as a Google or Typekit font.
+;
+; So, stylesheets for this theme have been are being managed in template.php:
+; - Added via dgd7_preprocess_html() in template.php.
+; - Removed via dgd7_css_alter() in template.php.
+
+
+; FEATURES (pg. 275-279)
+;-------------------------------------------------------------------------------
+; Here we specify which of the global theme settings we want to support in this
+; theme. These settings can be manipulated globally (across all themes) in the
+; UI via admin/appearance/settings or just for this theme via
+; admin/appearance/settings/dgd7 
+;
+; Supported
+features[] = favicon
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = main_menu
+
+; Unsupported
+featured[] = logo
+featured[] = secondary_menu

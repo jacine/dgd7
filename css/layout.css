@@ -1,0 +1,80 @@
+/* This CSS was written using SASS and Compass.
+ * @see http://compass-style.org/ 
+ -----------------------------------------------------------------------------*/
+.container {
+  *zoom: 1;
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container > :first-child {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.column {
+  float: left;
+  display: inline;
+  position: relative;
+}
+
+.column.main {
+  width: 100%;
+}
+
+.column-first {
+  width: 25%;
+  left: -75%;
+}
+
+.column-second {
+  float: right;
+  width: 25%;
+}
+
+.sidebar-first .column.main {
+  width: 75%;
+  left: 25%;
+}
+
+.sidebar-second .column.main {
+  width: 75%;
+}
+
+.two-sidebars .column.main {
+  width: 50%;
+  left: 25%;
+}
+.two-sidebars .column-first {
+  left: -50%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .container > :first-child,
+  .column {
+    float: none;
+    left: auto;
+    right: auto;
+    margin: 0 auto;
+    min-width: 0;
+    width: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    *zoom: 1;
+  }
+  .container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .container > :first-child {
+    width: 100%;
+    max-width: none;
+  }
+}
