@@ -19,10 +19,12 @@ function dgd7_preprocess_html(&$vars) {
   // see http://lin-clark.com/blog/theming-html5-and-rdfa-drupal-7
   if (module_exists('rdf')) {
     $vars['doctype'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+RDFa 1.1//EN">' . "\n";
+    $vars['rdf_version'] = ' version="HTML+RDFa 1.1"';
     $vars['rdf_profile'] = ' profile="' . $vars['grddl_profile'] . '"';
   }
   else {
     $vars['doctype'] = '<!DOCTYPE html>' . "\n";
+    $vars['rdf_version'] = '';
     $vars['rdf_profile'] = '';
   }
 
